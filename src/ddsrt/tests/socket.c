@@ -159,7 +159,7 @@ CU_Test(ddsrt_sockets, gethostname)
   rc = ddsrt_gethostname(buf, sizeof(buf));
   CU_ASSERT_EQ (rc, DDS_RETCODE_OK);
 
-#if defined(__APPLE__) && TARGET_OS_IOS && !LWIP_SOCKET
+#if ((defined(__APPLE__) && TARGET_OS_IOS) || defined(__ANDROID__)) && !LWIP_SOCKET
   CU_ASSERT_FATAL (buf[0] != '\0');
   rc = ddsrt_gethostname(sysbuf, strlen(buf) + 1);
   CU_ASSERT_EQ (rc, DDS_RETCODE_OK);
