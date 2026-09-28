@@ -13,7 +13,7 @@ cmake_minimum_required(VERSION 3.16)
 project(CycloneDDS VERSION 11.0.1 LANGUAGES C)
 
 if(CMAKE_SYSTEM_NAME STREQUAL "iOS")
-  enable_language(OBJCXX)
+  enable_language(OBJC)
 endif()
 
 # Set a default build type if none was specified

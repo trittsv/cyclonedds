@@ -160,7 +160,7 @@ else()
     list(APPEND sources
       "${source_dir}/src/sockets/posix/socket.c")
     if(CMAKE_SYSTEM_NAME STREQUAL "iOS")
-      list(APPEND sources "${source_dir}/src/sockets/ios/gethostname.mm")
+      list(APPEND sources "${source_dir}/src/sockets/ios/gethostname.m")
       target_link_libraries(ddsrt INTERFACE "-framework UIKit" objc)
     else()
       list(APPEND sources "${source_dir}/src/sockets/posix/gethostname.c")
